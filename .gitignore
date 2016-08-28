@@ -1,0 +1,12 @@
+devmeetings/*.iws
+devmeetings/*.war
+devmeetings/.classpath
+devmeetings/.DS_Store
+devmeetings/.project
+devmeetings/.settings
+devmeetings//*.launch
+devmeetings//*.tmproj
+devmeetings//out/**
+devmeetings/stacktrace.log
+devmeetings/test/reports
+devmeetings/build
