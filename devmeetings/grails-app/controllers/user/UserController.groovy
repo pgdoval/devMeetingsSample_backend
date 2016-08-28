@@ -8,7 +8,7 @@ import grails.converters.*
 class UserController {
 
     def findAllUsers(){
-        def allUsers = User.list()
+        def allUsers = User.list().sort{it.userOrder}
         def allUserTechsByUser = UserTech.list().groupBy{
             it.user
         }
