@@ -26,6 +26,17 @@ class UserController {
         findFilteredUsers(closure)
     }
 
+    def findPremiumUsers(){
+
+        String hay = params.hay
+
+        def closure = {
+            user->
+                user.premium
+        }
+        findFilteredUsers(closure)
+    }
+
 
     private findFilteredUsers(Closure<Boolean> filter){
         def allUsers = User.list().sort{it.userOrder}
@@ -36,6 +47,7 @@ class UserController {
 
         def result = allUsers.collect{
             user -> [
+                    id: user.id,
                     photo: user.photo,
                     name: user.name,
                     twitter: user.twitter,
@@ -51,8 +63,19 @@ class UserController {
 
         result = result.findAll(filter)
 
-        render result as JSON;
+        render result as JSON
 
+    }
+
+    def updatePremium(long userId){
+        println userId
+        User user = User.get(userId)
+
+        user.premium = params.value.toBoolean()
+
+        user.save()
+
+        render user as JSON
     }
 }
 
