@@ -14,6 +14,8 @@ class UserController {
 
     def findUsersByString(){
 
+        println params
+
         String hay = params.hay
 
         def closure = {
@@ -67,15 +69,33 @@ class UserController {
 
     }
 
+    def processUser(User user)
+    {
+
+    }
+
     def updatePremium(long userId){
-        println userId
         User user = User.get(userId)
 
         user.premium = params.value.toBoolean()
 
         user.save()
 
-        render user as JSON
+        def result = [
+                id: user.id,
+                photo: user.photo,
+                name: user.name,
+                twitter: user.twitter,
+                premium: user.premium,
+                languages: UserTech.findAllByUser(user).collect{
+                    userTech -> [
+                            name: userTech.tech.name,
+                            value: userTech.value
+                    ]
+                }.unique()
+        ]
+
+        render result as JSON
     }
 }
 
