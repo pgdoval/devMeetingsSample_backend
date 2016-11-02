@@ -4,10 +4,11 @@ class UrlMappings {
 
     static mappings = {
 
-        get "/allUsers"(controller: 'user', action: 'findAllUsers')
-        get "/findUsers"(controller: 'user', action: 'findUsersByString')
-        get "/premiumUsers"(controller: 'user', action: 'findPremiumUsers')
-        post     "/premium/$userId"(controller: 'user', action: 'updatePremium')
+        get "/allProducts/$userNumber"(controller: 'product', action: 'findAllProducts')
+        get "/findProducts/$userNumber"(controller: 'product', action: 'findProductsByString')
+        get "/productsInCart/$userNumber"(controller: 'product', action: 'findPremiumProducts')
+        post "/cart/$userNumber/$productId"(controller: 'product', action: 'addToCart')
+        post "/cart"(controller: 'product', action: 'processCart')
 
         "/"(controller: 'application', action:'index')
         "500"(view: '/error')

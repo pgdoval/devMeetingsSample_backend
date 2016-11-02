@@ -2,12 +2,12 @@ package tech
 
 import user.User
 
-class UserTech {
+class UserProduct {
 
 
     User user
-    Tech tech
-    String value
+    Product tech
+    int amount
 
     static constraints = {
     }
