@@ -54,12 +54,6 @@ class BootStrap {
         new UserTech(user:pablo, tech: groovy, value: "So easy!").save()
         new UserTech(user:pablo, tech: spread, value: "Ask me whatcha want, baby").save()
 
-
-        new UserTech(user:pablo, tech: dart, value: "I love it!").save()
-        new UserTech(user:pablo, tech: polymer, value: "Totally amazing!").save()
-        new UserTech(user:pablo, tech: groovy, value: "So easy!").save()
-        new UserTech(user:pablo, tech: spread, value: "Ask me whatcha want, baby").save()
-
         new UserTech(user:rafa, tech: dart, value: "It will rule the world").save()
         new UserTech(user:rafa, tech: interview, value: "I beat you!").save()
         new UserTech(user:rafa, tech: groovy, value: "Please, so so easy!").save()
