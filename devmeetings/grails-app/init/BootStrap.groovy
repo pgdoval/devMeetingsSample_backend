@@ -1,6 +1,6 @@
 import user.User
-import tech.UserProduct
-import tech.Product
+import product.UserProduct
+import product.Product
 
 class BootStrap {
 

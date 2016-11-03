@@ -6,9 +6,9 @@ class UrlMappings {
 
         get "/allProducts/$userNumber"(controller: 'product', action: 'findAllProducts')
         get "/findProducts/$userNumber"(controller: 'product', action: 'findProductsByString')
-        get "/productsInCart/$userNumber"(controller: 'product', action: 'findPremiumProducts')
+        get "/productsInCart/$userNumber"(controller: 'product', action: 'findProductsInCartForUser')
         post "/cart/$userNumber/$productId"(controller: 'product', action: 'addToCart')
-        post "/cart"(controller: 'product', action: 'processCart')
+        post "/cart/$userNumber"(controller: 'product', action: 'processCart')
 
         "/"(controller: 'application', action:'index')
         "500"(view: '/error')

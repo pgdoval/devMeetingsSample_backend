@@ -1,4 +1,4 @@
-package tech
+package product
 
 import user.User
 
@@ -6,7 +6,7 @@ class UserProduct {
 
 
     User user
-    Product tech
+    Product product
     int amount
 
     static constraints = {

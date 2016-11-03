@@ -1,4 +1,4 @@
-package tech
+package product
 
 class Product {
 

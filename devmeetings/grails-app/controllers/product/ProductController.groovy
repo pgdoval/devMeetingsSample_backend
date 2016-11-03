@@ -1,14 +1,12 @@
 package product
 
-import tech.UserProduct
-import tech.Product
+import user.User
 import grails.rest.*
 import grails.converters.*
 
 class ProductController {
 
     def findAllProducts(long userNumber){
-        println "oooooooooooooooooooooo"
         findFilteredProducts({true}, userNumber)
     }
 
@@ -33,7 +31,7 @@ class ProductController {
 
         def closure = {
             product->
-                def up = UserProduct.findByUserAndProduct(User.findByUserNumber(userNumber), product)
+                def up = UserProduct.findByUserAndProduct(User.findByUserNumber(userNumber), Product.get(product.id))
 
                 return up && up.amount
         }
